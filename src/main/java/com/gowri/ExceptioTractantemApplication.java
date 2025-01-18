@@ -1,8 +1,7 @@
 package com.gowri;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -23,9 +22,22 @@ public class ExceptioTractantemApplication {
 	
 	@Scheduled(cron = "0 0/4 * * * ?")
 	public void appInfo() {
-		log.info("##/nCRON JOB/n##");
-		String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-        log.warn("[{}] Application started: {}", timestamp);
-	}
+		
+		 int currentHour = LocalDateTime.now().getHour();
+
+	        // Determine the greeting based on the time of day
+	        String greeting = switch (currentHour) {
+	            case 6, 7, 8, 9, 10, 11 -> "Good Morning";
+	            case 12, 13, 14, 15, 16, 17 -> "Good Afternoon";
+	            case 18, 19, 20 -> "Good Evening";
+	            default -> "Good Night";  // For hours 21-5
+	        };
+
+	        // Format the timestamp using DateTimeFormatter (Java 8+)
+	        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
+	        // Log the greeting with the timestamp
+	        log.warn("[{}] {}", timestamp, greeting);
+	    }
 
 }
