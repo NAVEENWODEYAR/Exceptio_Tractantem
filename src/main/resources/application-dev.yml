@@ -1,6 +1,8 @@
 
 server:
-  port: 8182	
+  port: 8182
+  servlet:
+    context-path: /exception/v1/
 spring:
   application:
     name: Exception_Hanlding
