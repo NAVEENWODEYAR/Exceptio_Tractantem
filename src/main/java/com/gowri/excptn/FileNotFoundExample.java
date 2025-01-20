@@ -1,5 +1,10 @@
 package com.gowri.excptn;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  * @author NaveenWodeyar
  * @date 19-Jan-2025 11:22:37 pm
@@ -9,11 +14,9 @@ public class FileNotFoundExample {
 
 	public static void readFile(String filename) {
 		try {
-			// Code that might throw an exception
 			FileReader file = new FileReader(filename);
 			BufferedReader fileInput = new BufferedReader(file);
 
-			// Reading the file line by line
 			String line;
 			while ((line = fileInput.readLine()) != null) {
 				System.out.println(line);
@@ -29,6 +32,6 @@ public class FileNotFoundExample {
 	}
 
 	public static void main(String[] args) {
-		readFile("example.txt");
+		readFile("/stuff/exception.txt");
 	}
 }

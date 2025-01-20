@@ -23,7 +23,7 @@ public class ExceptioTractantemApplication {
 	@Scheduled(cron = "0 0/4 * * * ?")
 	public void appInfo() {
 		
-		 int currentHour = LocalDateTime.now().getHour();
+		 Integer currentHour = LocalDateTime.now().getHour();
 
 	        // Determine the greeting based on the time of day
 	        String greeting = switch (currentHour) {

@@ -1,0 +1,71 @@
+
+Types of Java Exceptions
+In Java, exceptions are categorized into two main types: checked exceptions and unchecked exceptions. Additionally, there is a third category known as errors. Let's delve into each of these types:
+
+1.Checked Exception
+2.Unchecked Exception
+3.Error
+
+
+1. Checked Exceptions
+Checked exceptions are the exceptions that are checked at compile-time. This means that the compiler verifies that the code handles these exceptions either by catching them or declaring them in the method signature using the throws keyword. Examples of checked exceptions include:
+
+IOException: An exception is thrown when an input/output operation fails, such as when reading from or writing to a file.
+
+SQLException: It is thrown when an error occurs while accessing a database.
+
+ParseException: Indicates a problem while parsing a string into another data type, such as parsing a date.
+
+ClassNotFoundException: It is thrown when an application tries to load a class through its string name using methods like Class.forName(), but the class with the specified name cannot be found in the classpath.
+
+2. Unchecked Exceptions (Runtime Exceptions)
+Unchecked exceptions, also known as runtime exceptions, are not checked at compile-time. These exceptions usually occur due to programming errors, such as logic errors or incorrect assumptions in the code. They do not need to be declared in the method signature using the throws keyword, making it optional to handle them. Examples of unchecked exceptions include:
+
+NullPointerException: It is thrown when trying to access or call a method on an object reference that is null.
+
+ArrayIndexOutOfBoundsException: It occurs when we try to access an array element with an invalid index.
+
+ArithmeticException: It is thrown when an arithmetic operation fails, such as division by zero.
+
+IllegalArgumentException: It indicates that a method has been passed an illegal or inappropriate argument.
+
+3. Errors
+Errors represent exceptional conditions that are not expected to be caught under normal circumstances. They are typically caused by issues outside the control of the application, such as system failures or resource exhaustion. Errors are not meant to be caught or handled by application code. Examples of errors include:
+
+OutOfMemoryError: It occurs when the Java Virtual Machine (JVM) cannot allocate enough memory for the application.
+
+StackOverflowError: It is thrown when the stack memory is exhausted due to excessive recursion.
+
+NoClassDefFoundError: It indicates that the JVM cannot find the definition of a class that was available at compile-time.
+
+Understanding the different types of exceptions in Java is crucial for writing robust and reliable code. By handling exceptions appropriately, you can improve the resilience of your applications and provide better user experiences.hierarchy of exception handling
+
+
+
+Difference between Checked and Unchecked Exceptions
+Here are the key differences between checked exceptions, unchecked exceptions (runtime exceptions), and errors in Java:
+
+1. Checked Exceptions:
+Compile-time Check: Checked exceptions are checked at compile-time by the Java compiler. This means that the compiler ensures that these exceptions are either caught or declared in the method signature using the throws keyword.
+
+Examples: Examples of checked exceptions include IOException, SQLException, ParseException, etc.
+
+Forced Handling: Checked exceptions enforce explicit handling, either by catching them or declaring them to be thrown. This helps in improving code reliability and robustness.
+
+Recovery Possible: Checked exceptions typically represent recoverable conditions, such as file not found or database connection failure, where the application may take corrective action.
+
+2. Unchecked Exceptions (Runtime Exceptions):
+Not Checked at Compile-time: Unlike checked exceptions, unchecked exceptions are not checked at compile-time. This means that the compiler does not enforce handling of unchecked exceptions.
+
+Examples: Examples of unchecked exceptions include NullPointerException, ArrayIndexOutOfBoundsException, ArithmeticException, etc.
+
+Runtime Errors: Unchecked exceptions often represent programming errors or unexpected conditions during runtime, such as null references or array index out of bounds.
+
+Optional Handling: Handling of unchecked exceptions is optional. While it's good practice to handle them for robustness, it's not mandatory.
+
+3. Errors:
+Not Meant for Handling: Errors represent exceptional conditions that are typically beyond the control of the application and are not meant to be caught or handled by application code.
+
+Examples: Examples of errors include OutOfMemoryError, StackOverflowError, NoClassDefFoundError, etc.
+
+Critical Conditions: Errors usually indicate critical conditions, such as JVM failures or system resource exhaustion, where the application cannot recover.
