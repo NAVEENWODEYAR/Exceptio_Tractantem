@@ -17,4 +17,17 @@ public class FinallyBlock {
             System.out.println("In finally block");
             return;
         }
-}}
+	}
+	
+	 public static String testMethod() {
+	        try {
+	            System.out.println("Inside try block");
+	            return "From try block";
+	        } catch (Exception e) {
+	            System.out.println("Inside catch block");
+	            return "From catch block";
+	        } finally {
+	            System.out.println("Inside finally block");
+	        }
+	    }
+	}
