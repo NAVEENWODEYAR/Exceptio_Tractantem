@@ -1,12 +1,10 @@
+package com.gowri.threads;
+
 /**
  * @author NaveenWodeyar
  * @date 14-Apr-2025 10:19:02 pm
  */
-package com.gowri.threads;
 
-/**
- * 
- */
 public class MultithreadingExample {
 	 public static void main(String[] args) {
 	        // Get memory before threads start
