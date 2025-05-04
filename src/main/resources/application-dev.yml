@@ -5,4 +5,4 @@ server:
     context-path: /exception/v1/
 spring:
   application:
-    name: Exception_Hanlding
+    name: Exception_Handling
