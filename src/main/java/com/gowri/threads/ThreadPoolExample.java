@@ -19,7 +19,6 @@ public class ThreadPoolExample {
         for (int i = 0; i < 5; i++) {
             executor.submit(task);
         }
-
         executor.shutdown();
     }
 }
