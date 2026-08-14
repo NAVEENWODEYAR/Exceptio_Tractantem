@@ -16,7 +16,7 @@ public class ExceptioTractantemApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ExceptioTractantemApplication.class, args);
-		log.warn("\n####\n ExceptioTractantemApplication started \n####\n");
+		log.warn("\n####\n ExceptioTractantem Application started \n####\n");
 	}
 	
 	@Scheduled(cron = "0 0/4 * * * ?")
@@ -26,16 +26,16 @@ public class ExceptioTractantemApplication {
 
 	        // Determine the greeting based on the time of day
 	        String greeting = switch (currentHour) {
-	            case 6, 7, 8, 9, 10, 11 -> "Good Morning";
-	            case 12, 13, 14, 15, 16, 17 -> "Good Afternoon";
-	            case 18, 19, 20 -> "Good Evening";
-	            default -> "Good Night";  // For hours 21-5
+	            case 6, 7, 8, 9, 10, 11 -> "Good Morning,";
+	            case 12, 13, 14, 15, 16, 17 -> "Good Afternoon,";
+	            case 18, 19, 20 -> "Good Evening,";
+	            default -> "Good Night.";  // For hours 21-5
 	        };
 
-	        // Format the timestamp using DateTimeFormatter (Java 8+)
+	        // Format the timeStamp using DateTimeFormatter (Java 8+)
 	        String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
-	        // Log the greeting with the timestamp
+	        // Log the greeting with the timeStamp
 	        log.warn("[{}] {}", timestamp, greeting);
 	    }
 
