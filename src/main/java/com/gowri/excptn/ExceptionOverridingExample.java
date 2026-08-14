@@ -29,7 +29,7 @@ class Child extends Parent {
 
  // Overriding method with narrower checked exception (valid)
  @Override
- void readFile() throws FileNotFoundException {
+ void readFile() throws IOException {
      System.out.println("Child: Reading file...");
      // Throws FileNotFoundException (subclass of IOException)
      FileReader fr = new FileReader("nonexistent.txt");
