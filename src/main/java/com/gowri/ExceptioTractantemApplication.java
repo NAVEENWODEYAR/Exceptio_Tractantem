@@ -16,7 +16,7 @@ public class ExceptioTractantemApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ExceptioTractantemApplication.class, args);
-		log.warn("####");
+		log.warn("\n####\n ExceptioTractantemApplication started \n####\n");
 	}
 	
 	@Scheduled(cron = "0 0/4 * * * ?")
