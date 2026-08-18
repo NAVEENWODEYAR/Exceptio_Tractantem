@@ -7,8 +7,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
+@EnableScheduling
 @SpringBootApplication
 public class ExceptioTractantemApplication {
 
@@ -19,7 +21,7 @@ public class ExceptioTractantemApplication {
 		log.warn("\n####\n ExceptioTractantem Application started \n####\n");
 	}
 	
-	@Scheduled(cron = "0 0/4 * * * ?")
+	@Scheduled(cron = "0 0/1 * * * ?")
 	public void appInfo() {
 		
 		 Integer currentHour = LocalDateTime.now().getHour();
