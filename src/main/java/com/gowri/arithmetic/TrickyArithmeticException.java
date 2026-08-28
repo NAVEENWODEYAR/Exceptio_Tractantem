@@ -6,12 +6,14 @@ package com.gowri.arithmetic;
  */
 
 public class TrickyArithmeticException {
+	
     public static void main(String[] args) {
         try {
             int[] numbers = {10, 20, 30};
             int index = getIndex();  // returns 1
             int result = numbers[index] / getDenominator();  // denominator will be 0
             System.out.println("Result: " + result);
+            
         } catch (ArithmeticException e) {
             System.out.println("Caught an ArithmeticException: " + e.getMessage());
         }
