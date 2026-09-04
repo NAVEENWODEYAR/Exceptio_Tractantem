@@ -1,47 +1,49 @@
 package com.gowri.arithmetic;
 
 /**
- * @author NaveenWodeyar
- * @date 28-Aug-2026 10:58:03 pm
- */
+
+@author NaveenWodeyar
+@date 28-Aug-2026 10:58:03 pm
+*/
 
 public class InfiniteLoopDemo {
 
+static {
 
-    static void main() {
+    /*
+     * A while loop executes repeatedly as long as
+     * its condition remains true.
+     */
 
-        /*
-         * An infinite loop is a loop that never ends
-         * because its condition always remains true.
-         */
+    int count = 1;
 
-        int count = 1;
+    while (count <= 5) {
 
-        while (true) {
+        // Print the current value.
+        System.out.println("Count: " + count);
 
-            // Print the current value.
-            System.out.println("Count: " + count);
-
-            // Increment the value.
-            count++;
-
-            /*
-             * The condition of the while loop is always true,
-             * so the loop continues forever.
-             *
-             * To stop the program manually:
-             * Press Ctrl + C in the terminal.
-             */
-        }
-}
-    
-    public static void main(String[] args) {
-
-        // The condition "i >= 0" is always true
-        // because i keeps increasing.
-        for (int i = 0; i >= 0; i++) {
-            System.out.println(i);
-        }
-        
+        // Increment the value.
+        count++;
     }
+
+    /*
+     * The loop stops when count becomes 6 because
+     * the condition "count <= 5" becomes false.
+     */
+}
+
+public static void main(String[] args) {
+
+    /*
+     * This for loop prints numbers from 0 to 4.
+     * It executes exactly 5 times.
+     */
+
+    for (int i = 0; i < 5; i++) {
+
+        System.out.println("i: " + i);
+    }
+}
+
+
 }
