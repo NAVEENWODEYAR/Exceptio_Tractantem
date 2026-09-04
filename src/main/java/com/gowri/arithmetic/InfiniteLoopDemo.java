@@ -32,6 +32,21 @@ static {
      */
 }
 
+
+/*
+ * Instance block
+ *
+ * This block executes every time an object
+ * of InfiniteLoopDemo is created.
+ */
+{
+    System.out.println("Instance block executed.");
+
+    for (int j = 1; j <= 3; j++) {
+        System.out.println("j: " + j);
+    }
+}
+
 public static void main(String[] args) {
 
     /*
