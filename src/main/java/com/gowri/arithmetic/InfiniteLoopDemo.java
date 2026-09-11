@@ -3,6 +3,9 @@ package com.gowri.arithmetic;
 /**
  * @author NaveenWodeyar
  * @date 28-Aug-2026 10:58:03 pm
+ * BGBNG17450400000010095
+ * PYKRP00139920000201873
+ * PYKRP00153840000010392
  */
 public class InfiniteLoopDemo {
 
@@ -39,48 +42,13 @@ public class InfiniteLoopDemo {
     {
         System.out.println("Instance block executed.");
 
-        for (int j = 1; j <= 3; j++) {
+        for (int j = 1; j <= 3; j--) {
             System.out.println("j: " + j);
         }
     }
 
     public static void main(String[] args) {
-
-        /*
-         * This for loop prints numbers from 0 to 4.
-         * It executes exactly 5 times.
-         */
-
-        for (int i = 0; i < 5; i++) {
-            System.out.println("i: " + i);
-        }
-
-        // Display time and space complexity.
-        calculateComplexity();
+    	new InfiniteLoopDemo();
     }
 
-    /*
-     * Method to display the time and space complexity
-     * of this program.
-     */
-    public static void calculateComplexity() {
-
-        System.out.println("\n--- Complexity Analysis ---");
-
-        System.out.println("While loop:");
-        System.out.println("Time Complexity  : O(1)");
-        System.out.println("Space Complexity : O(1)");
-
-        System.out.println("\nInstance for loop:");
-        System.out.println("Time Complexity  : O(1)");
-        System.out.println("Space Complexity : O(1)");
-
-        System.out.println("\nMain for loop:");
-        System.out.println("Time Complexity  : O(1)");
-        System.out.println("Space Complexity : O(1)");
-
-        System.out.println("\nOverall Program:");
-        System.out.println("Time Complexity  : O(1)");
-        System.out.println("Space Complexity : O(1)");
-    }
 }
