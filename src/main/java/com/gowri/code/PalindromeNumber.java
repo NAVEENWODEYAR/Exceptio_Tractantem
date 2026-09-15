@@ -1,62 +1,194 @@
 package com.gowri.code;
 
-/**
- * @author NaveenWodeyar
- * @date 19-Apr-2025 10:13:54 pm
- */
+import java.util.Scanner;
 
+/**
+ * This program checks whether a given number is a palindrome.
+ *
+ * A palindrome number is a number that remains the same
+ * when its digits are reversed.
+ *
+ * Examples:
+ *
+ * 121  -> Palindrome
+ * 123  -> Not a palindrome
+ * 1001 -> Palindrome
+ *
+ * @author NaveenWodeyar
+ * @date 19-Apr-2025 10:13:54 pm
+ */
 public class PalindromeNumber {
 
-	static void palindromeNumber() {
-		int num = 121;
-		int original = num;
-		int reversed = 0;
+    /**
+     * Checks whether the given number is a palindrome.
+     *
+     * The number is reversed digit by digit and then
+     * compared with the original number.
+     *
+     * @param num the number to be checked
+     */
+    static void palindromeNumber(int num) {
 
-		while (num != 0) {
-			int digit = num % 10;
-			reversed = reversed * 10 + digit;
-			num /= 10;
-		}
+        /*
+         * Store the original number because the value of
+         * 'num' will change while reversing the number.
+         */
+        int original = num;
 
-		if (original == reversed) {
-			System.out.println(original + " is a palindrome.");
-		} else {
-			System.out.println(original + " is not a palindrome.");
-		}
-	}
+        // Variable used to store the reversed number.
+        int reversed = 0;
 
-	public static void main(String[] args) {
+        /*
+         * Extract each digit from the number and construct
+         * the reversed number.
+         *
+         * Example:
+         *
+         * num = 121
+         *
+         * First iteration:
+         * digit = 1
+         * reversed = 0 * 10 + 1 = 1
+         *
+         * Second iteration:
+         * digit = 2
+         * reversed = 1 * 10 + 2 = 12
+         *
+         * Third iteration:
+         * digit = 1
+         * reversed = 12 * 10 + 1 = 121
+         */
+        while (num != 0) {
 
-		// Get the Java runtime
-        Runtime runtime = Runtime.getRuntime();
-        runtime.gc(); // Run garbage collector
+            // Extract the last digit of the number.
+            int digit = num % 10;
 
-        // Record memory before execution
-        long memoryBefore = runtime.totalMemory() - runtime.freeMemory();
+            /*
+             * Add the extracted digit to the reversed number.
+             *
+             * Multiplying by 10 shifts the existing digits
+             * one position to the left.
+             */
+            reversed = reversed * 10 + digit;
 
-        // Record time before
-        long startTime = System.nanoTime();
+            /*
+             * Remove the last digit from the original number.
+             *
+             * Example:
+             * 121 / 10 = 12
+             * 12  / 10 = 1
+             * 1   / 10 = 0
+             */
+            num /= 10;
+        }
 
-        palindromeNumber();
-        
-        // Record time after
-        long endTime = System.nanoTime();
+        /*
+         * Compare the original number with the reversed number.
+         *
+         * If both are equal, the number is a palindrome.
+         */
+        if (original == reversed) {
+            System.out.println(original + " is a palindrome.");
+        } else {
+            System.out.println(original + " is not a palindrome.");
+        }
+    }
 
-        // Record memory after execution
-        long memoryAfter = runtime.totalMemory() - runtime.freeMemory();
+    /**
+     * Main method - program execution starts here.
+     *
+     * @param args command-line arguments
+     */
+    public static void main(String[] args) {
 
-        // Calculate duration
-        long durationNano = endTime - startTime;
-        double durationMillis = durationNano / 1_000_000.0;
+        // Create Scanner object to read input from the user.
+        Scanner scanner = new Scanner(System.in);
 
-        // Calculate memory usage
-        long memoryUsedBytes = memoryAfter - memoryBefore;
-        double memoryUsedKB = memoryUsedBytes / 1024.0;
+        // Ask the user for the number of test cases.
+        System.out.println("Enter the number of test cases: ");
+        int n = scanner.nextInt();
 
-        // Output results
-        System.out.println("\n======= Output =======");
-        System.out.println("Time taken: " + durationNano + " ns (" + durationMillis + " ms)");
-        System.out.println("Memory used: " + memoryUsedBytes + " bytes (" + memoryUsedKB + " KB)");
+        /*
+         * Execute the palindrome check for each test case.
+         *
+         * We use i < n instead of i <= n.
+         *
+         * Example:
+         * If n = 3,
+         * i = 0, 1, 2
+         *
+         * Therefore, exactly 3 test cases are processed.
+         */
+        for (int i = 0; i < n; i++) {
 
-	}
+            // Ask the user to enter a number.
+            System.out.println("Enter the number: ");
+            int j = scanner.nextInt();
+
+            // Check whether the entered number is a palindrome.
+            palindromeNumber(j);
+        }
+
+        // Close the Scanner object.
+        scanner.close();
+    }
 }
+
+/*
+ * =====================================================================
+ *                     TIME AND SPACE COMPLEXITY
+ * =====================================================================
+ *
+ * Let D = number of digits in the given number.
+ *
+ *
+ * TIME COMPLEXITY:
+ * ----------------
+ *
+ * The while loop processes one digit during every iteration.
+ *
+ * For example, if the number is:
+ * 
+ *
+ * 12345
+ *
+ * The loop executes 5 times because the number has 5 digits.
+ *
+ * Therefore:
+ *
+ * Time Complexity = O(D)
+ *
+ * If N represents the value of the number, the number of digits
+ * is approximately log10(N).
+ *
+ * Therefore:
+ *
+ * Time Complexity = O(log N)
+ *
+ *
+ * SPACE COMPLEXITY:
+ * -----------------
+ *
+ * Only a fixed number of variables are used:
+ *
+ * original
+ * reversed
+ * digit
+ *
+ * No additional data structure is created.
+ *
+ * Therefore:
+ *
+ * Space Complexity = O(1)
+ *
+ * This is an iterative solution, so there is no recursive
+ * call stack.
+ *
+ *
+ * FINAL COMPLEXITY:
+ *
+ * Time Complexity  = O(D) = O(log N)
+ * Space Complexity = O(1)
+ *
+ * =====================================================================
+ */
