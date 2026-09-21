@@ -1,10 +1,12 @@
-/**
- * @author NaveenWodeyar
- * @date 16-Sept-2026 8:42:53 am
- */
 package com.gowri.code;
 
+import java.util.Scanner;
+
 /**
+ * 
+ * @author NaveenWodeyar
+ * @date 16-Sept-2026 8:42:53 am
+ * 
  * Segregates characters of a string into:
  * 1. Alphabets
  * 2. Digits
@@ -26,8 +28,8 @@ public class CharacterSegregation {
      */
     public static String[] segregateCharacters(String input) {
 
-        // StringBuilder is used because String concatenation
-        // inside a loop can create many unnecessary String objects.
+        // StringBuilder is used to efficiently store characters
+        // belonging to each category.
         StringBuilder alphabets = new StringBuilder();
         StringBuilder digits = new StringBuilder();
         StringBuilder specialChars = new StringBuilder();
@@ -35,15 +37,22 @@ public class CharacterSegregation {
         // Traverse the string exactly once.
         for (char ch : input.toCharArray()) {
 
+            // Check whether the character is an alphabet.
             if (Character.isLetter(ch)) {
                 alphabets.append(ch);
+
+            // Check whether the character is a digit.
             } else if (Character.isDigit(ch)) {
                 digits.append(ch);
+
+            // Any character other than alphabet and digit
+            // is considered a special character.
             } else {
                 specialChars.append(ch);
             }
         }
 
+        // Return the three categories as a String array.
         return new String[] {
             alphabets.toString(),
             digits.toString(),
@@ -52,16 +61,38 @@ public class CharacterSegregation {
     }
 
     /**
-     * Prints the segregation result.
+     * Main method to read multiple test cases from the user
+     * and display the segregated characters.
+     *
+     * @param args command-line arguments
      */
     public static void main(String[] args) {
 
-        String input = "Ja@va123#Pro!";
+        Scanner scanner = new Scanner(System.in);
 
-        String[] result = segregateCharacters(input);
+        System.out.print("Enter the number of test cases: ");
+        int n = scanner.nextInt();
 
-        System.out.println("Alphabets : " + result[0]);
-        System.out.println("Digits    : " + result[1]);
-        System.out.println("Special   : " + result[2]);
+        // Consume the leftover newline after nextInt().
+        scanner.nextLine();
+
+        // Process exactly n test cases.
+        for (int i = 1; i <= n; i++) {
+
+            System.out.print("Enter the value for test case " + i + ": ");
+            String str = scanner.nextLine();
+
+            // Call the method and store the returned result.
+            String[] result = segregateCharacters(str);
+
+            // Display the result.
+            System.out.println("Alphabets       : " + result[0]);
+            System.out.println("Digits          : " + result[1]);
+            System.out.println("Special Chars   : " + result[2]);
+
+            System.out.println();
+        }
+
+        scanner.close();
     }
 }
