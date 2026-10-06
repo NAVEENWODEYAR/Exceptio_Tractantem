@@ -14,15 +14,9 @@ import java.util.List;
  * removes their references so that the Garbage Collector can
  * reclaim the unused heap memory.
  *
- * @author Demo
  */
 public class GarbageCollectionDemo {
 
-    /**
-     * Main method of the program.
-     *
-     * @param args command-line arguments
-     */
     public static void main(String[] args) {
 
         // List used to temporarily hold the allocated objects.
@@ -52,10 +46,7 @@ public class GarbageCollectionDemo {
                 // Note: System.gc() is only a request, not a guarantee.
                 System.gc();
 
-                System.out.println(
-                    "Garbage collection requested after "
-                    + i + " MB allocation."
-                );
+                System.out.println("Garbage collection requested after "+ i + " MB allocation.");
             }
         }
 
