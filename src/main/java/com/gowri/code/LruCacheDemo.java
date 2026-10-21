@@ -27,6 +27,7 @@ public class LruCacheDemo {
         }
     }
 
+    
     private final int capacity;
     private final Map<Integer, Node> map;
     private final Node head;
@@ -38,6 +39,7 @@ public class LruCacheDemo {
      * @param capacity The maximum number of items the cache can hold.
      */
     public LruCacheDemo(int capacity) {
+    	
         this.capacity = capacity;
         this.map = new HashMap<>();
         
@@ -56,6 +58,7 @@ public class LruCacheDemo {
      * @return The cached value, or -1 if not found.
      */
     public int get(int key) {
+    	
         if (!map.containsKey(key)) {
             return -1;
         }
@@ -73,6 +76,7 @@ public class LruCacheDemo {
      * @param value The value associated with the key.
      */
     public void put(int key, int value) {
+    	
         if (map.containsKey(key)) {
             Node node = map.get(key);
             node.value = value;
@@ -87,9 +91,9 @@ public class LruCacheDemo {
             addToHead(newNode);
         }
     }
+    
 
     // --- Helper Methods for Doubly Linked List Management ---
-
     private void removeNode(Node node) {
         node.prev.next = node.next;
         node.next.prev = node.prev;
