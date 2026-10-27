@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 
 public class ArrayStoreExceptionExample {
 
+	@SuppressWarnings("removal")
 	static void arrStoreExcptn() {
 		try {
 			Object[] obj = new String[10];
