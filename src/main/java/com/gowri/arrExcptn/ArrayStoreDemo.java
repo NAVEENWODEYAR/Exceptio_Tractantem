@@ -6,9 +6,20 @@ package com.gowri.arrExcptn;
  */
 
 public class ArrayStoreDemo {
-    public static void main(String[] args) {
+    @SuppressWarnings("removal")
+	public static void main(String[] args) {
         Object[] objArray = new String[2];
-        objArray[0] = new Integer(10); // ArrayStoreException
+        
+        try {
+            objArray[0] = new Integer(10); // ArrayStoreException
+            System.out.println("Array= "+objArray);
+		} catch (Exception e) {
+	        objArray[0] = new Integer(10);
+	        System.out.println("Array= "+objArray);
+	        System.out.println("ArrayStoreException= "+e);
+		}finally {
+	        System.out.println("Array= "+objArray);
+		}
     }
 }
 
