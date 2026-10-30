@@ -19,6 +19,7 @@ public class ArrayStoreDemo {
 	        System.out.println("ArrayStoreException= "+e);
 		}finally {
 	        System.out.println("Array= "+objArray);
+	        System.out.println("Finally block");
 		}
     }
 }
