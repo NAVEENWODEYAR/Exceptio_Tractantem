@@ -19,6 +19,8 @@ public class ArrayStoreExceptionExample {
 		} catch (Exception e) {
 			System.out.println("/nArrayStoreException is thrown when an attempt is made to store an element of an incompatible type into an array."
 					+ " /nThis exception occurs at runtime and is a subclass of java.lang.RuntimeException"+e);
+		}finally {
+			System.out.println("ArrayStoreException demo");
 		}
 	}
 	
