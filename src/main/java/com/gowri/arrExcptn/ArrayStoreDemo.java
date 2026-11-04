@@ -12,20 +12,21 @@ public class ArrayStoreDemo {
 	public static void main(String[] args) {
     	
         Object[] objArray = new String[2];
+        System.out.println("Initialized Array: "+ objArray);
         objArray[0] = "1";
         objArray[1] = "Object";
         System.out.println("Object Array: "+ objArray);
-        System.out.println("Object Array: " + Arrays.toString(objArray));
+        System.out.println("Array contents: " + Arrays.toString(objArray));
         
         try {
             objArray[0] = new Integer(10); // ArrayStoreException
             System.out.println("Array= "+objArray);
 		} catch (Exception e) {
 	        objArray[0] = new Integer(10);
-	        System.out.println("Array= "+objArray);
+	        System.out.println("Array= "+ Arrays.toString(objArray));
 	        System.out.println("ArrayStoreException= "+e);
 		}finally {
-	        System.out.println("Array= "+objArray);
+	        System.out.println("Array= "+ Arrays.toString(objArray));
 	        System.out.println("Finally block");
 		}
     }
