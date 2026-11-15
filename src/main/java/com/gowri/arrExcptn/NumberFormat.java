@@ -1,4 +1,4 @@
-package com.gowri.excptn;
+package com.gowri.arrExcptn;
 
 /**
  * @author NaveenWodeyar

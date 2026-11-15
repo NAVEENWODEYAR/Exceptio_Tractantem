@@ -1,4 +1,4 @@
-package com.gowri.excptn;
+package com.gowri.arrExcptn;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

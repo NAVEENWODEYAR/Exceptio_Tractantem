@@ -1,4 +1,4 @@
-package com.gowri.excptn;
+package com.gowri.arrExcptn;
 
 import java.io.*; // For IOException
 import java.sql.*; // For SQLException
