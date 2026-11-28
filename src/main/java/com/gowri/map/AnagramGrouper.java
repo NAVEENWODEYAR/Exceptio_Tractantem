@@ -11,7 +11,7 @@ public class AnagramGrouper {
     public static void main(String[] args) {
 
         String[] words = {
-            "eat", "tea", "tan", "ate", "nat", "bat"
+            "eat", "tea", "tan", "ate", "nat", "bat","tac","tic","tat","mom","mam"
         };
 
         Map<String, List<String>> anagramGroups =
